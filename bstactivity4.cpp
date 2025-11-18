@@ -49,6 +49,30 @@ class bst{
     return p;
  }
 
+ bst * min(bst* root){
+
+    bst *p = root, *p2;
+    while(p!=NULL){
+
+        p2 = p;
+        p = p->left;
+    }
+    return p2;
+}
+
+bst * max(bst* root){
+    bst * p = root, *p2;
+    while(p!=NULL)
+    {
+        p2 = p;
+        p = p->right;
+    }
+    return p2;
+}
+
+
+
+
 
 
 
@@ -59,7 +83,7 @@ int main(){
 
     root = insert(root,50);
     root = insert(root,60);
-    root = search(root,50);
+   
 
 
 }
