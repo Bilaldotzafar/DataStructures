@@ -25,14 +25,14 @@ void insert (int number){
     if (root == NULL){
 
         root = newnode;
-        cout<<"inserted as root node";
+        cout<<"inserted as root node\n";
         return;
     }
 
     bst *current = root;
     bst *parent = NULL;
 
-    while(current == NULL){
+    while(current != NULL){
        parent = current;
        
        if(number < current -> id){
@@ -44,7 +44,7 @@ void insert (int number){
 
       }
      else{
-         cout<<"already exist";
+         cout<<"already exist\n";
            delete newnode;
            return;
  }
@@ -53,12 +53,12 @@ void insert (int number){
 
     if(number < parent -> id){
         parent -> left = newnode;
-        cout<<"inserted at thr left of"<<parent->id;
+        cout<<"inserted at the left of "<<parent->id<<"\n";
 
     }
     else{
         parent -> right = newnode;
-        cout<<"inserted at right of"<<parent -> id;
+        cout<<"inserted at right of "<<parent -> id<<"\n";
     }
 
 }
@@ -69,7 +69,7 @@ void insert (int number){
 
 
     inorder(node -> left);
-    cout<<node->id;
+    cout<<node->id<<" ";
     inorder(node -> right);
   }
 
@@ -77,12 +77,14 @@ void insert (int number){
 
 
 
-  int mian(){
+  int main(){
 
     insert(50);
     insert(70);
     insert(45);
 
     inorder(root);
+
+    return 0;
 
   }
